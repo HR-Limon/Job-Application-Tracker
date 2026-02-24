@@ -57,6 +57,23 @@ function toggle_style(id){
 
 maincontainer.addEventListener('click',function(event){
     
+
+    if (event.target.classList.contains('delete')) {
+
+        const parentNode = event.target.parentNode.parentNode
+        const jobname = parentNode.querySelector('.Jobname').innerText
+
+        interviewing = interviewing.filter(item => item.jobname !== jobname)
+        rejecting = rejecting.filter(item => item.jobname !== jobname)
+
+        parentNode.remove()
+
+        total.innerText = calculatingCount()
+        inerviewingcount.innerText = interviewing.length
+        rejectingcount.innerText = rejecting.length
+
+        changingJobs.innerText = calculatingCount() + " Jobs"
+    }
     if(event.target.classList.contains('interviewing-btn')){
         const parentNode = event.target.parentNode.parentNode.parentNode
 
@@ -155,7 +172,7 @@ function renderInterviewing(){
                 </div>
             </div>
             <div>
-                <button class="border border-[#f1f2f4FF] rounded-full p-2"><i class="fa-solid fa-trash-can"></i></button>
+                <button class="delete border border-[#f1f2f4FF] rounded-full p-2"><i class="fa-solid fa-trash-can"></i></button>
             </div>
         `
         filtersection.appendChild(div)
@@ -194,12 +211,13 @@ function renderRejecting(){
                 </div>
             </div>
             <div>
-                <button class="border border-[#f1f2f4FF] rounded-full p-2"><i class="fa-solid fa-trash-can"></i></button>
+                <button class="delete border border-[#f1f2f4FF] rounded-full p-2"><i class="fa-solid fa-trash-can"></i></button>
             </div>
         `
         filtersection.appendChild(div)
     }
 }
+
 
 
 
