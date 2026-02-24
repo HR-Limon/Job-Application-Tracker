@@ -14,9 +14,13 @@ let filtersection = document.getElementById('filtered_section')
 
 
 function calculatingCount(){
-    total.innerText = cards.children.length
+    return cards.children.length
 }
-calculatingCount()
+total.innerText = calculatingCount()
+let changingJobs = document.getElementById('changingJobs')
+
+
+changingJobs.innerText = calculatingCount() + " Jobs"
 
 let interviewing = []
 let rejecting = []
@@ -34,13 +38,18 @@ function toggle_style(id){
     if(id === 'interviewing-filtering-btn'){
         allcards.classList.add('hidden')
         filtersection.classList.remove('hidden')
+        let count = interviewing.length
+        changingJobs.innerText = count + " of " + calculatingCount()+ " Jobs"
         renderInterviewing()
     }else if(id == 'all-filtering-btn'){
         allcards.classList.remove('hidden')
         filtersection.classList.add('hidden')
+        changingJobs.innerText = calculatingCount() + " Jobs"
     }else if(id=='rejecting-filtering-btn'){
         allcards.classList.add('hidden')
         filtersection.classList.remove('hidden')
+        let rcount = rejecting.length
+        changingJobs.innerText = rcount + " of " + calculatingCount()+ " Jobs"
         renderRejecting()
     }
 
@@ -67,6 +76,7 @@ maincontainer.addEventListener('click',function(event){
 
         rejecting = rejecting.filter(item => item.jobname !== jobname.innerText)
         rejectingcount.innerText = rejecting.length 
+
         const jobexist = interviewing.find(item => item.jobname === cardinfo.jobname);
 
         parentNode.querySelector('.status').innerHTML = `<span class= "w-fit text-green-700 p-1 text-lg">Interview</span>`
@@ -76,6 +86,7 @@ maincontainer.addEventListener('click',function(event){
             interviewing.push(cardinfo)
         }
         inerviewingcount.innerText = interviewing.length
+
         }else if(event.target.classList.contains('rejecting-btn')){
         const parentNode = event.target.parentNode.parentNode.parentNode
 
@@ -103,6 +114,7 @@ maincontainer.addEventListener('click',function(event){
             rejecting.push(cardinfo)
         }
         rejectingcount.innerText = rejecting.length
+
         }
 
 
@@ -114,7 +126,7 @@ maincontainer.addEventListener('click',function(event){
 function renderInterviewing(){
     filtersection.innerHTML = ''
     
-    if(rejecting.length === 0){
+    if(interviewing.length === 0){
         filtersection.innerHTML = `
          <div class="flex flex-col items-center justify-center mt-20 gap-2 mb-8">
             <span><i class="fa-regular fa-file text-4xl text-gray-300"></i></span>
@@ -188,3 +200,10 @@ function renderRejecting(){
         filtersection.appendChild(div)
     }
 }
+
+
+
+
+
+
+
