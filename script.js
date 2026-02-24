@@ -57,10 +57,9 @@ function toggle_style(id){
 
 maincontainer.addEventListener('click',function(event){
     
+    if (event.target.closest('.delete')) {
 
-    if (event.target.classList.contains('delete')) {
-
-        const parentNode = event.target.parentNode.parentNode
+        const parentNode = event.target.closest('.jobcard')  
         const jobname = parentNode.querySelector('.Jobname').innerText
 
         interviewing = interviewing.filter(item => item.jobname !== jobname)
@@ -217,11 +216,3 @@ function renderRejecting(){
         filtersection.appendChild(div)
     }
 }
-
-
-
-
-
-
-
-

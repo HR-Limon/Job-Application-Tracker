@@ -18,9 +18,9 @@
 </head>
 <body class="bg-gray-50">
     <header class="w-[80%] mx-auto">
-        <h1 class="font-bold text-[32px] pb-5 pt-[60px] text-[#002c5cFF]">Job Application Tracker</h1>
+        <h1 class="font-bold text-[32px] pb-5 pt-[60px] text-[#002c5cFF] md:text-[26px]">Job Application Tracker</h1>
         <div class="grid grid-cols-3 gap-4">
-            <div class="rounded-lg py-5 px-5 border border-gray-300">
+            <div class="rounded-lg p-5 border border-gray-300">
                 <p class="text-[#323b49FF]">Total</p>
                 <p id="totalcount" class="text-[#002c5cFF] font-bold text-2xl">0</p>
             </div>
@@ -41,16 +41,18 @@
             <div id="changingJobs" class="text-[16px] text-[#323b49FF]">0 Jobs</div>
         </div>
         
-        <button onclick="toggle_style('all-filtering-btn')" id="all-filtering-btn" class="bg-[#3b82f6FF] px-8 py-2.5 rounded-md text-white font-semibold border border-gray-300 rounded-lg">All</button>
-        <button onclick="toggle_style('interviewing-filtering-btn')" id="interviewing-filtering-btn" class="text-[#323b49FF] px-8 py-2.5  border border-gray-300 rounded-lg">Interview</button>
-        <button onclick="toggle_style('rejecting-filtering-btn')" id="rejecting-filtering-btn" class="text-[#323b49FF] px-8 py-2.5 border border-gray-300 rounded-lg">Rejected</button>
+        <div class="grid grid-cols-3 gap-3 md:gap-2 sm:gap-1">
+            <button onclick="toggle_style('all-filtering-btn')" id="all-filtering-btn" class="sm: bg-[#3b82f6FF] px-8 py-2.5 text-white font-semibold border border-gray-300 rounded-lg lg:p-8 md:p-3 md:text-xl lg:text-2xl">All</button>
+            <button onclick="toggle_style('interviewing-filtering-btn')" id="interviewing-filtering-btn" class="sm: text-[#323b49FF] px-2.5 py-2.5  border border-gray-300 rounded-lg lg:p-8 md:p-3 md:text-xl lg:text-2xl">Interview</button>
+            <button onclick="toggle_style('rejecting-filtering-btn')" id="rejecting-filtering-btn" class="sm: text-[#323b49FF] px-2.5 py-2.5 border border-gray-300 rounded-lg lg:p-8 md:p-3 md:text-xl lg:text-2xl">Rejected</button>
+        </div>
         <section id="filtered_section" class="hidden">
 
         </section>
         <section id="allcards">
             <div id="cards">
                 <!-- card 1 -->
-                <div class="my-4 flex justify-between p-6 border rounded-lg border-gray-300">
+                <div class="jobcard my-4 flex justify-between p-6 border rounded-lg border-gray-300">
                     <div class="space-y-5">
                         <!-- left part -->
                         <div>
@@ -61,7 +63,7 @@
                         <p class="status bg-gray-300 w-fit p-1 border border-gray-200 rounded-lg">NOT APPLIED</p>
                         <p class="notes text-[#323b49FF]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                         <div class="gap-2">
-                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] hover:bg-green-400 cursor-pointer ">Interview</button>
+                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF  hover:bg-green-400 cursor-pointer">Interview</button>
                             <button class="rejecting-btn px-3 py-2 border-2 rounded-md border-[#ef4444FF] font-bold text-[#ef4444FF] hover:bg-red-400 cursor-pointer">Rejected</button>
                         </div>
                     </div>
@@ -72,7 +74,7 @@
 
                 </div>
                 <!-- card-2  -->
-                <div class="my-4 flex justify-between p-6 border rounded-lg border-gray-300">
+                <div class="jobcard my-4 flex justify-between p-6 border rounded-lg border-gray-300">
                     <div class=" space-y-5">
                         <!-- left part -->
                         <div>
@@ -83,7 +85,7 @@
                         <p class="status bg-gray-300 w-fit p-1 border border-gray-200 rounded-lg">NOT APPLIED</p>
                         <p class="notes text-[#323b49FF]">Create stunning web experiences for high-profile clients. Must have portfolio with modern web design trends.</p>
                         <div class="gap-2">
-                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] ">Interview</button>
+                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] hover:bg-green-400 cursor-pointer ">Interview</button>
                             <button class="rejecting-btn px-3 py-2 border-2 rounded-md border-[#ef4444FF] font-bold text-[#ef4444FF] ">Rejected</button>
                         </div>
                     </div>
@@ -94,7 +96,7 @@
 
                 </div>
                 <!-- card-3  -->
-                <div class="my-4 flex justify-between p-6 border rounded-lg border-gray-300">
+                <div class="jobcard my-4 flex justify-between p-6 border rounded-lg border-gray-300">
                     <div class=" space-y-5">
                         <!-- left part -->
                         <div>
@@ -105,7 +107,7 @@
                         <p class="status bg-gray-300 w-fit p-1 border border-gray-200 rounded-lg">NOT APPLIED</p>
                         <p class="notes text-[#323b49FF]"> Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
                         <div class="gap-2">
-                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] ">Interview</button>
+                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] hover:bg-green-400 cursor-pointer ">Interview</button>
                             <button class="rejecting-btn px-3 py-2 border-2 rounded-md border-[#ef4444FF] font-bold text-[#ef4444FF] ">Rejected</button>
                         </div>
                     </div>
@@ -115,7 +117,7 @@
                     </div>
                 </div>
                 <!-- card 4 -->
-                <div class="my-4 flex justify-between p-6 border rounded-lg border-gray-300">
+                <div class="jobcard my-4 flex justify-between p-6 border rounded-lg border-gray-300">
                     <div class=" space-y-5">
                         <!-- left part -->
                         <div>
@@ -126,7 +128,7 @@
                         <p class="status bg-gray-300 w-fit p-1 border border-gray-200 rounded-lg">NOT APPLIED</p>
                         <p class="notes text-[#323b49FF]">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                         <div class="gap-2">
-                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] ">Interview</button>
+                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] hover:bg-green-400 cursor-pointer ">Interview</button>
                             <button class="rejecting-btn px-3 py-2 border-2 rounded-md border-[#ef4444FF] font-bold text-[#ef4444FF] ">Rejected</button>
                         </div>
                     </div>
@@ -137,7 +139,7 @@
 
                 </div>
                 <!-- card 5 -->
-                <div class="my-4 flex justify-between p-6 border rounded-lg border-gray-300">
+                <div class="jobcard my-4 flex justify-between p-6 border rounded-lg border-gray-300">
                     <div class=" space-y-5">
                         <!-- left part -->
                         <div>
@@ -148,7 +150,7 @@
                         <p class="status  bg-gray-300 w-fit p-1 border border-gray-200 rounded-lg">NOT APPLIED</p>
                         <p class="notes text-[#323b49FF]">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
                         <div class="gap-2">
-                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] ">Interview</button>
+                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] hover:bg-green-400 cursor-pointer ">Interview</button>
                             <button class="rejecting-btn px-3 py-2 border-2 rounded-md border-[#ef4444FF] font-bold text-[#ef4444FF] ">Rejected</button>
                         </div>
                     </div>
@@ -159,7 +161,7 @@
 
                 </div>
                 <!-- card 6 -->
-                <div class="my-4 flex justify-between p-6 border rounded-lg border-gray-300">
+                <div class="jobcard my-4 flex justify-between p-6 border rounded-lg border-gray-300">
                     <div class=" space-y-5">
                         <!-- left part -->
                         <div>
@@ -170,7 +172,7 @@
                         <p class="status bg-gray-300 w-fit p-1 border border-gray-200 rounded-lg">NOT APPLIED</p>
                         <p class="notes text-[#323b49FF]">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
                         <div class="gap-2">
-                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] ">Interview</button>
+                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] hover:bg-green-400 cursor-pointer ">Interview</button>
                             <button class="rejecting-btn px-3 py-2 border-2 rounded-md border-[#ef4444FF] font-bold text-[#ef4444FF] ">Rejected</button>
                         </div>
                     </div>
@@ -181,7 +183,7 @@
 
                 </div>
                 <!-- card-7  -->
-                <div class="my-4 flex justify-between p-6 border rounded-lg border-gray-300">
+                <div class="jobcard my-4 flex justify-between p-6 border rounded-lg border-gray-300">
                     <div class=" space-y-5">
                         <!-- left part -->
                         <div>
@@ -192,7 +194,7 @@
                         <p class="status  bg-gray-300 w-fit p-1 border border-gray-200 rounded-lg">NOT APPLIED</p>
                         <p class="notes text-[#323b49FF]">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
                         <div class="gap-2">
-                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] ">Interview</button>
+                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] hover:bg-green-400 cursor-pointer ">Interview</button>
                             <button class="rejecting-btn px-3 py-2 border-2 rounded-md border-[#ef4444FF] font-bold text-[#ef4444FF] ">Rejected</button>
                         </div>
                     </div>
@@ -203,7 +205,7 @@
 
                 </div>
                 <!-- card 8 -->
-                <div class="my-4 flex justify-between p-6 border rounded-lg border-gray-300">
+                <div class="jobcard my-4 flex justify-between p-6 border rounded-lg border-gray-300">
                     <div class=" space-y-5">
                         <!-- left part -->
                         <div>
@@ -214,7 +216,7 @@
                         <p class="status  bg-gray-300 w-fit p-1 border border-gray-200 rounded-lg">NOT APPLIED</p>
                         <p class="notes text-[#323b49FF]"> We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                         <div class="gap-2">
-                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] ">Interview</button>
+                            <button class="interviewing-btn px-3 py-2 border-2 rounded-md border-[#10b981FF] font-bold text-[#10b981FF] hover:bg-green-400 cursor-pointer ">Interview</button>
                             <button class="rejecting-btn px-3 py-2 border-2 rounded-md border-[#ef4444FF] font-bold text-[#ef4444FF] ">Rejected</button>
                         </div>
                     </div>
